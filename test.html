@@ -4,7 +4,7 @@
        <title>An Vat</title>
 </head>
 <body>
-       <h1 class = "tt">Rèn luyện đoàn viên đợt 2</h1>
+       <h1 class = "tt" id = "te">Rèn luyện đoàn viên đợt 2-Trang số: </h1>
        <button class="button-3" role="button" onclick = "back()">Quay lại</button>
        <button class="button-3" role="button" onclick = "next()">Trang tiếp theo</button>
        <div id = "pic"></div>
@@ -72,8 +72,11 @@
        <script>
               if (localStorage.getItem("ch") == "accepted"){
                      let h = document.getElementById("pic");
+                     let ok = document.getElementById("te");
+                     
                      var cnt = Number(localStorage.getItem("p"));
                      var numfile = Number(localStorage.getItem("file"));
+                     ok.innerHTML += `${Number(numfile)+1}`;
                      for (let i = cnt; i < cnt + 100; ++i){
                             console.log(i);
                             let path = "IMG"+String(numfile)+"/rldv("+String(i)+").jpg";
